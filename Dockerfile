@@ -8,7 +8,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US
 ENV LC_ALL en_US.UTF-8
 
-RUN sed -i -e 's,http://archive.ubuntu.com,http://de.archive.ubuntu.com,g' /etc/apt/sources.list
+# RUN sed -i -e 's,http://archive.ubuntu.com,http://de.archive.ubuntu.com,g' /etc/apt/sources.list
 RUN apt-get update && \
 	apt-get -y install git wget curl && \
 	apt-get clean
