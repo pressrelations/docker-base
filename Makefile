@@ -1,6 +1,6 @@
 docker_registry = dory.pressrelations.de:5000
 name = base
-tag = 0.0.8
+tag = 0.0.9
 
 .PHONY: build
 

@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 MAINTAINER pressrelations
 
 ENV HOME /root
@@ -14,7 +14,9 @@ RUN locale-gen en_US.UTF-8
 RUN sed -i -e 's,http://archive.ubuntu.com,http://de.archive.ubuntu.com,g' /etc/apt/sources.list
 RUN apt-get update && \
 	apt-get -y install git wget curl && \
-	apt-get clean
+	apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
 
 # Deactivate unused services
 RUN mv /etc/service/cron /etc/service/.cron
