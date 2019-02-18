@@ -1,4 +1,4 @@
-docker_registry = dory.pressrelations.de:5000
+docker_registry = 589401011586.dkr.ecr.eu-central-1.amazonaws.com
 name = base
 tag = 0.0.9
 
